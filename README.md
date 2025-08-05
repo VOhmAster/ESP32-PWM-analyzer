@@ -74,6 +74,19 @@ This project can be expanded by adding more hardware, allowing for higher-freque
 - `Schematics/`: EasyEDA design files.
 - `3D_Models/`: STL files for 3D printing the enclosure.
 
+
+## Demo
+
+**Load Response:**  
+![Load response](media/response.gif)
+
+**Boot Sequence:**  
+![Boot](media/boot.gif)
+
+**OTA Firmware Update:**  
+![OTA](media/OTAupdate.gif)
+
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
