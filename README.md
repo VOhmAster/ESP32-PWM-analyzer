@@ -11,6 +11,9 @@ This project demonstrates a method of analyzing PWM signals with a focus on grap
 - Visual glitch detection in the signals.
 - Freeze mode to stop updates for stable readings.
 
+## Additional Feature
+The onboard RGB LED acts as a status indicator, adapting its color and behavior (pulsing or blinking) according to the current channel activity, frequency ranges, and duty cycle states.
+
 ## Hardware
 This project is built on an ESP32 and uses the following components:
 - Two PWM signal inputs.
