@@ -21,7 +21,7 @@ This project is built on an **ESP32-S3** and uses the following components:
 - **Rotary encoder** to adjust the update interval.  
 - **Button interface** for menu navigation (3 dedicated buttons).  
 - **RGB LED** as a status indicator (color and blink patterns show channel activity and duty states).  
-- **220V → 5V (≥700 mA) power supply** for main power.  
+- **220V → 5V (≥700 mA) power supply** power supply module.  
 - **STDN-3A24-ADJ step-down module** for voltage regulation.  
 
 ### Pin Configuration
@@ -42,7 +42,7 @@ This project is built on an **ESP32-S3** and uses the following components:
 | `SPI_DC_PIN`     | 14  | OLED DC                  |
 | `BTN_MENU1`      | 20  | Main menu                |
 | `BTN_MENU2`      | 21  | Detailed data            |
-| `BTN_MENU3`      | 47  | Graphical screen         |
+| `BTN_MENU3`      | 47  | Graphical view           |
 
 ### Important Notes
 - An RC circuit is used for delayed start, and a 10kΩ pull-down resistor is placed on the PWM input pins to ensure proper signal reading.
@@ -58,7 +58,7 @@ This project is built on an **ESP32-S3** and uses the following components:
 
 ## Usage
 - **Encoder Rotation**: Adjust the update interval between 50ms and 2000ms or toggle Freeze mode.
-- **Encoder Button**: Change the display unit (Hz -> kHz -> MHz -> Hz).
+- **Encoder Button**: Change the display unit (Hz → kHz → MHz → Hz).
 - **Display Navigation**: Use the dedicated buttons to switch between:
 - **Main Display**: Displays real-time PWM signal data.
 - **Detailed Data**: Shows more in-depth measurements such as high and low times.
@@ -70,9 +70,9 @@ This project can be expanded by adding more hardware, allowing for higher-freque
 - Support for higher frequency ranges beyond the default setup.
 
 ## Files Included
-- `PWM_analyzer.ino`: The main code for the PWM analyzer.
-- Schematics: EasyEDA schematic for hardware setup.
-- 3D models for printing the case.
+- `PWM_analyzer.ino`: Main Arduino code.
+- `Schematics/`: EasyEDA design files.
+- `3D_Models/`: STL files for 3D printing the enclosure.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
