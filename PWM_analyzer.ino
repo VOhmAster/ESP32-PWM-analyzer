@@ -10,8 +10,8 @@
 // -------------------------
 // 2. Wi-Fi settings
 // -------------------------
-const char* ssid = "Németh";
-const char* password = "HalaszAniko.1975";
+const char* ssid = "YOUR SSID";
+const char* password = "YOUR PASSWORD";
 
 // -------------------------
 // 3. GPIO definitions
