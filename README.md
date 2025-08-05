@@ -3,13 +3,26 @@
 ## Description
 This project demonstrates a method of analyzing PWM signals with a focus on graphical, real-time visualization of the waveform. The main goal is to educate users on PWM analysis and provide a visual representation of signals as they change in real-time.
 
-## Features
-- Real-time graphical display of PWM waveforms.
-- Adjustable frequency zoom levels for different ranges (300Hz - 2MHz).
-- Simple user interface with interactive menu options.
-- Supports multiple PWM channels (CH1, CH2).
-- Visual glitch detection in the signals.
-- Freeze mode to stop updates for stable readings.
+## **Features**
+- **Real-time graphical display** of PWM waveforms
+- **Adjustable frequency zoom levels** for different ranges (300 Hz – 2 MHz)
+- **Simple user interface** with interactive menu options
+- **Supports multiple PWM channels** (CH1, CH2)
+- **Visual glitch detection** in the signals
+- **Freeze mode** to stop updates for stable readings
+
+### **Displayed Measurements**
+- **Main Menu**
+  - Frequency
+  - Duty Cycle
+  - High Time
+  - Low Time
+- **Data Menu**
+  - Pulse Width
+  - Period *(auto-switches between µs / ms based on value)*
+  - Rise-to-Rise Interval
+  - Glitch Count
+
 
 ## Additional Feature
 The onboard RGB LED acts as a status indicator, adapting its color and behavior (pulsing or blinking) according to the current channel activity, frequency ranges, and duty cycle states.
@@ -45,7 +58,7 @@ This project is built on an **ESP32-S3** and uses the following components:
 | `BTN_MENU3`      | 47  | Graphical view           |
 
 ### Important Notes
-- An RC circuit is used for delayed start, and a 10kΩ pull-down resistor is placed on the PWM input pins to ensure proper signal reading.
+- A 10kΩ pull-down resistor is placed on the PWM input pins to improve signal stability and ensure reliable readings during startup.
 
 ## Installation
 1. Clone the repository to your local machine:
