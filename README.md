@@ -1,2 +1,64 @@
-# ESP32-PWM-analyzer
-The project aims to provide a simple, educational way to analyze PWM signals with real-time graphical display. The system can be expanded with hardware to analyze higher frequencies. The code comes with a schematic diagram and 3D models for printing.
+# PWM Signal Analyzer
+
+## Description
+This project demonstrates a method of analyzing PWM signals with a focus on graphical, real-time visualization of the waveform. The main goal is to educate users on PWM analysis and provide a visual representation of signals as they change in real-time.
+
+## Features
+- Real-time graphical display of PWM waveforms.
+- Adjustable frequency zoom levels for different ranges (300Hz - 2MHz).
+- Simple user interface with interactive menu options.
+- Supports multiple PWM channels (CH1, CH2).
+- Visual glitch detection in the signals.
+- Freeze mode to stop updates for stable readings.
+
+## Hardware
+This project is built on an ESP32 and uses the following components:
+- Two PWM signal inputs.
+- Rotary encoder to adjust the update interval.
+- Button interface for menu navigation.
+- LEDs for visual feedback based on signal status.
+
+### Pin Configuration
+| Pin        | Description              |
+|------------|--------------------------|
+| `PWM1_PIN` | Channel 1 PWM input      |
+| `PWM2_PIN` | Channel 2 PWM input      |
+| `ENC_A`    | Rotary encoder pin A     |
+| `ENC_B`    | Rotary encoder pin B     |
+| `ENC_SW`   | Rotary encoder switch    |
+| `RED_PIN`  | Red LED for status       |
+| `GREEN_PIN`| Green LED for status     |
+| `BLUE_PIN` | Blue LED for status      |
+
+### Important Notes
+- An RC circuit is used for delayed start, and a 10kΩ pull-down resistor is placed on the PWM input pins to ensure proper signal reading.
+
+## Installation
+1. Clone the repository to your local machine:
+    ```bash
+    git clone https://github.com/yourusername/pwm-analyzer.git
+    ```
+2. Open the project in Arduino IDE.
+3. Upload the code to your ESP32 device.
+4. Connect the PWM signal sources to the appropriate pins.
+
+## Usage
+- Rotate the encoder to adjust the update interval (between 50ms and 2000ms).
+- Press the encoder button to switch between menu screens:
+  - **Main Display**: Displays real-time PWM signal data.
+  - **Detailed Data**: Shows more in-depth measurements.
+  - **Graph View**: Displays the waveform graph of the signals.
+
+## Expansion
+This project can be expanded by adding more hardware, allowing for higher-frequency PWM analysis and additional features like:
+- Signal filtering and smoothing.
+- Support for higher frequency ranges beyond the default setup.
+
+## Files Included
+- `main.ino`: The main code for the PWM analyzer.
+- Schematics: EasyEDA schematic for hardware setup.
+- 3D models for printing the case.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
