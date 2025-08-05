@@ -14,12 +14,15 @@ This project demonstrates a method of analyzing PWM signals with a focus on grap
 ## Additional Feature
 The onboard RGB LED acts as a status indicator, adapting its color and behavior (pulsing or blinking) according to the current channel activity, frequency ranges, and duty cycle states.
 
-## Hardware
-This project is built on an ESP32 and uses the following components:
-- Two PWM signal inputs.
-- Rotary encoder to adjust the update interval.
-- Button interface for menu navigation.
-- LEDs for visual feedback based on signal status.
+## Hardware  
+This project is built on an **ESP32-S3** and uses the following components:  
+- **Two PWM signal inputs** (with optional RC delay network and 10k pull-down to GND).  
+- **SSD1322 OLED display** (SPI interface).  
+- **Rotary encoder** to adjust the update interval.  
+- **Button interface** for menu navigation (3 dedicated buttons).  
+- **RGB LED** as a status indicator (color and blink patterns show channel activity and duty states).  
+- **220V → 5V (≥700 mA) power supply** for main power.  
+- **STDN-3A24-ADJ step-down module** for voltage regulation.  
 
 ### Pin Configuration
 | Name             | Pin | Description              |
