@@ -156,12 +156,11 @@ bool hasSignal2() {
 void setup() {
   // Serial for debugging if needed
   // Serial.begin(115200);
-  delay(1000);
 
   // --- OLED display initialization ---
   u8g2.setBusClock(2000000);
   u8g2.begin();
-  u8g2.setPowerSave(0);
+  u8g2.setPowerSave(1);
 
   // Set RGB LED pins as outputs
   pinMode(RED_PIN, OUTPUT);
@@ -184,6 +183,8 @@ void setup() {
   // --- Wi-Fi connection ---
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
+
+   u8g2.setPowerSave(0);
 
   unsigned long wifiStart = millis();
   bool wifiOk = false;
@@ -283,6 +284,8 @@ void setup() {
   pinMode(PWM1_PIN, INPUT);
   pinMode(PWM2_PIN, INPUT);
 
+  delay(1000);
+
   // Interrupts
   attachInterrupt(digitalPinToInterrupt(ENC_A), encoderISR, CHANGE);
   attachInterrupt(digitalPinToInterrupt(PWM1_PIN), pwmISR_CH1, CHANGE);
@@ -291,7 +294,7 @@ void setup() {
   // Initialize encoder state
   lastA = digitalRead(ENC_A);
   lastB = digitalRead(ENC_B);
-  delay(1000);
+  
 }
 
 void loop() {
@@ -431,7 +434,12 @@ void drawDetailScreen() {
   // -----------------------------
   u8g2.drawStr(5, 10, "CH1");
   sprintf(buf, "Pulse:  %.1f %%", dutyPct1);                u8g2.drawStr(30, 10, buf);
-  sprintf(buf, "Period: %lu \xB5s", savedPwmPeriod1);       u8g2.drawStr(30, 22, buf);
+  if (savedPwmPeriod1 > 9999) {
+     sprintf(buf, "Period: %lu ms", savedPwmPeriod1 / 1000);
+} else {
+     sprintf(buf, "Period: %lu \xB5s", savedPwmPeriod1);
+}
+      u8g2.drawStr(30, 22, buf);
   sprintf(buf, "R->R:  %.1f ms", riseToRiseCH1 / 1000.0);   u8g2.drawStr(30, 34, buf);
   if (glitchCountCH1 == 0) strcpy(buf, "Glitch: none");
   else sprintf(buf, "Glitch: %u short", glitchCountCH1);
@@ -442,7 +450,12 @@ void drawDetailScreen() {
   // -----------------------------
   u8g2.drawStr(135, 10, "CH2");
   sprintf(buf, "Pulse:  %.1f %%", dutyPct2);                u8g2.drawStr(160, 10, buf);
-  sprintf(buf, "Period: %lu \xB5s", savedPwmPeriod2);       u8g2.drawStr(160, 22, buf);
+ if (savedPwmPeriod2 > 9999) {
+    sprintf(buf, "Period: %lu ms", savedPwmPeriod2 / 1000);
+} else {
+    sprintf(buf, "Period: %lu \xB5s", savedPwmPeriod2);
+}
+    u8g2.drawStr(160, 22, buf);
   sprintf(buf, "R->R:  %.1f ms", riseToRiseCH2 / 1000.0);   u8g2.drawStr(160, 34, buf);
   if (glitchCountCH2 == 0) strcpy(buf, "Glitch: none");
   else sprintf(buf, "Glitch: %u short", glitchCountCH2);
