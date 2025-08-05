@@ -78,10 +78,10 @@ This project can be expanded by adding more hardware, allowing for higher-freque
 ## Demo
 
 **Load Response:**  
-![Load response](media/response.gif)
+![Load response](media/Response.gif)
 
 **Boot Sequence:**  
-![Boot](media/boot.gif)
+![Boot](media/Boot.gif)
 
 **OTA Firmware Update:**  
 ![OTA](media/OTAupdate.gif)
